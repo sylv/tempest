@@ -3,6 +3,8 @@
 Extract information from video files using ffprobe.
 The output is a clean subset of the ffprobe output with some additional information inferred.
 
+## example
+
 ```ts
 import { probeFile, AudioCodec, LanguageType, Resolution, VideoCodec } from "@ryanke/video-probe";
 
@@ -70,3 +72,8 @@ const result = {
   ],
 };
 ```
+
+## zstd
+
+This package comes with a zstd dictionary that you can use to compress the output in either messagepack or json format.
+It's unused by the library itself, and is only there for convenience. You can import it from `@ryanke/video-probe/probe.dict` or `dist/probe.dict`.
