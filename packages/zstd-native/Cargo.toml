@@ -1,0 +1,16 @@
+[package]
+name = "zstd-native"
+version = "0.1.0"
+edition = "2021"
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+napi = { version = "2", features = ["async"] }
+napi-derive = "2"
+zstd = "0.13.0"
+
+[build-dependencies]
+napi-build = "2"

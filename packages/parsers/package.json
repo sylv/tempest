@@ -1,0 +1,40 @@
+{
+  "name": "@ryanke/parsers",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Sylver <ryan@sylver.me>",
+  "type": "module",
+  "exports": {
+    "./codecs": {
+      "import": "./dist/codecs.js",
+      "types": "./src/codecs.ts"
+    },
+    "./language": {
+      "import": "./dist/language.js",
+      "types": "./src/language.ts"
+    },
+    "./resolution": {
+      "import": "./dist/resolution.js",
+      "types": "./src/resolution.ts"
+    },
+    "./bits": {
+      "import": "./dist/bits.js",
+      "types": "./src/bits.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist/* && tsc --noEmit && bun build ./src/*.ts --outdir dist --splitting",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@atlasbot/configs": "^10.5.12",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0",
+    "iso-639-1": "^3.1.0",
+    "iso-639-2": "^3.0.2"
+  }
+}

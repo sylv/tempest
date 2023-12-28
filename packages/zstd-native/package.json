@@ -1,0 +1,49 @@
+{
+  "name": "@ryanke/zstd-wasm",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Sylver <ryan@sylver.me>",
+  "type": "module",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "napi": {
+    "name": "ephyra",
+    "triples": {
+      "defaults": true,
+      "additional": [
+        "x86_64-unknown-linux-musl",
+        "aarch64-unknown-linux-gnu",
+        "i686-pc-windows-msvc",
+        "armv7-unknown-linux-gnueabihf",
+        "aarch64-apple-darwin",
+        "aarch64-linux-android",
+        "x86_64-unknown-freebsd",
+        "aarch64-unknown-linux-musl",
+        "aarch64-pc-windows-msvc",
+        "armv7-linux-androideabi"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "napi build ./dist --platform --release --pipe \"prettier -w\" && bun run esmify",
+    "esmify": "bun run ./esmify.ts",
+    "bench": "vitest bench ./bench.ts",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@atlasbot/configs": "^10.5.12",
+    "@napi-rs/cli": "^2.16.3",
+    "@skhaz/zstd": "^1.0.19",
+    "@types/node": "^20.6.4",
+    "cppzst": "^2.0.12",
+    "dedent": "^1.5.1",
+    "prettier": "^3.0.3",
+    "vitest": "^1.1.0",
+    "zstddec": "^0.1.0"
+  },
+  "trustedDependencies": [
+    "cppzst"
+  ]
+}

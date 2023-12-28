@@ -1,0 +1,11 @@
+{
+  "name": "tempest",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "trustedDependencies": [
+    "cppzst"
+  ]
+}

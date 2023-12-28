@@ -1,0 +1,16 @@
+{
+  "extends": "@atlasbot/configs/tsconfig/esm.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "noUncheckedIndexedAccess": false,
+    "types": ["vitest/importMeta"],
+
+    // Bun options
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "moduleResolution": "bundler"
+  }
+}

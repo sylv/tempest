@@ -1,0 +1,33 @@
+{
+  "name": "@ryanke/video-probe",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Sylver <ryan@sylver.me>",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./src/index.ts"
+    },
+    "./probe.dict": "./dist/probe.dict"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist/* && tsc --noEmit && bun build ./src/index.ts --outdir dist --external @ryanke/parsers --external zod --splitting --target node && cp ./src/probe.dict ./dist/probe.dict",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@atlasbot/configs": "^10.5.12",
+    "@types/node": "18",
+    "execa": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "dependencies": {
+    "zod": "^3.22.4",
+    "@ryanke/parsers": "workspace:*"
+  }
+}
